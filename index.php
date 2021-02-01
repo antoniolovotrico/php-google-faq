@@ -45,6 +45,9 @@ $googlePrivacy = [
         <title>php-google-faq</title>
     </head>
     <body>
-        
+        <?php foreach ($googlePrivacy as $key => $value) { ?>
+            <h2> <?php echo $value['question']; ?> </h2>
+            <p> <?php echo $value['answer']; ?> </p>
+        <?php } ?>
     </body>
 </html>
