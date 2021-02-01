@@ -42,25 +42,21 @@ $googlePrivacy = [
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
+        <!-- style.css -->
+        <link rel="stylesheet" href="./dist/css/app.css">
         <title>php-google-faq</title>
     </head>
     <body>
-        <?php foreach ($googlePrivacy as $key => $value) { ?>
-            <h2> <?php echo $value['question']; ?> </h2>
-            <?php $expAns = explode('£', $value['answer']); 
-            var_dump($expAns);?>
+        <div>
+            <?php foreach ($googlePrivacy as $key => $value) { ?>
+                <h2> <?php echo $value['question']; ?> </h2>
+                <?php $expAns = explode('£', $value['answer']); ?>
 
-            <?php foreach ($expAns as $para) { ?>
-                <p> <?php echo $para ?> </p>
+                 <?php foreach ($expAns as $para) { ?>
+                    <p> <?php echo $para ?> </p>
+                 <?php } ?>
             <?php } ?>
-
-            
-               
-                
-            
-
-           
-        <?php } ?>
+        </div>
+        
     </body>
 </html>
