@@ -42,20 +42,39 @@ $googlePrivacy = [
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- google font -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400&display=swap" rel="stylesheet">
         <!-- style.css -->
         <link rel="stylesheet" href="./dist/css/app.css">
         <title>php-google-faq</title>
     </head>
     <body>
-        <div>
-            <?php foreach ($googlePrivacy as $key => $value) { ?>
-                <h2> <?php echo $value['question']; ?> </h2>
-                <?php $expAns = explode('£', $value['answer']); ?>
+        
+        <header>
+            <div class="top">
+                <img src="./dist/img/google_logo-696x265.png" alt="">
+                <h1>Privacy & Termini</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li>Introduzione</li>
+                    <li>Norme sulla privacy</li>
+                    <li>Termini di servizio</li>
+                    <li>Tecnologie</li>
+                    <li class="active">Domande frequenti</li>
+                </ul>
+            </nav>
+        </header>
+        <div class="main">
+        <?php foreach ($googlePrivacy as $key => $value) { ?>
+            <h2> <?php echo $value['question']; ?> </h2>
+            <?php $expAns = explode('£', $value['answer']); ?>
 
-                 <?php foreach ($expAns as $para) { ?>
-                    <p> <?php echo $para ?> </p>
-                 <?php } ?>
+            <?php foreach ($expAns as $para) { ?>
+                <p> <?php echo $para ?> </p>
             <?php } ?>
+        <?php } ?>
         </div>
         
     </body>
